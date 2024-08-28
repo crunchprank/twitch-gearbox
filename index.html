@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d894a01a33.js" crossorigin="anonymous"></script>
+    <link href="dark-mode.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://wiki.crunchprank.net/_media/favicon.ico" />
+    <title>Twitch Gearbox</title>
+    <style>a,a:visited{color:#d63384;}@media(max-width:768px){#socialNav .nav-item{padding:0 5px;}#socialNav{flex-wrap:nowrap;overflow-x:auto;}}.chart-container{position:relative;height:40vh;width:80vw;max-width:100%;}.chart-container canvas{width:100% !important;height:100% !important;}</style>
+</head>
+<body>
+    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded-bottom">
+    <a class="navbar-brand py-2 px-3" href="index.html">Twitch Gearbox</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="tags.php">Popular Tags</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="filter.php">Stream Filter</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row flex-nowrap" id="socialNav">
+            <li class="nav-item">
+                <a class="nav-link" href="https://twitch.tv/crunchprank"><i class="fa-brands fa-twitch"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://mastodon.social/@crunchprank"><i class="fa-brands fa-mastodon"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://instagram.com/crunchprank"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://crunchprank.net/discord"><i class="fa-brands fa-discord"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://patreon.com/crunchprank"><i class="fa-brands fa-patreon"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div class="dark-mode-toggle py-2 px-3">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+            <label class="form-check-label" for="darkModeSwitch"><i class="fa-solid fa-lightbulb"></i></label>
+        </div>
+    </div>
+</nav>
+
+
+<section class="bg-light mt-3 rounded-3">
+    <div class="container py-4">
+        <h2>Twitch Gearbox</h2>
+        <p class="col-md-8 lead">This collection of tools has been assembled for both streamers and viewers on Twitch. Features include finding the most popular tags used across the platform and a stream filter that gives you a powerful new way to find your next favorite streamer.</p>
+    </div>
+</section>
+
+<section class="rounded-3 mt-3">
+    <div class="container py-4">
+    <h3>Frequently Asked Questions</h3>
+    <dl class="row">
+        <dt class="col-sm-3 pt-2">How often are the popular tags updated?</dt>
+        <dd class="col-sm-9 pt-2">They are updated every 10 minutes.</dd>
+
+        <dt class="col-sm-3 pt-2">Do you have any archive tag data from previous dates?</dt>
+        <dd class="col-sm-9 pt-2">I have not implemented an archive of tag data, though I would like to at some point. Right now it's real-time data, updated every 10 minutes.</dd>
+
+        <dt class="col-sm-3 pt-2">Why are there no language tags?</dt>
+        <dd class="col-sm-9 pt-2">I made the decision to remove tracking of the language tags that get automatically added to a stream based on the language of the channel. This was mainly due to the <code>English</code> tag and how many channels use it.</dd>
+
+        <dt class="col-sm-3 pt-2">Why don't I see a certain tag listed?</dt>
+        <dd class="col-sm-9 pt-2">The "All Twitch Tags" section only shows tags that are in use by 20 or more different channels. I decided on this to simply cut out a majority of tags that were low quality.</dd>
+
+        <dt class="col-sm-3 pt-2">Can I scrape your site for tag data?</dt>
+        <dd class="col-sm-9 pt-2">Please don't. If you are interested in an API key to fetch the <code>top30tags</code> and <code>alltags</code> datasets then contact me. Since the server this is hosted on is not the most robust, I have to keep traffic at a minimum.</dd>
+
+        <dt class="col-sm-3 pt-2">What is the "Include all tags" checkbox on the filter page?</dt>
+        <dd class="col-sm-9 pt-2">Currently Twitch only allows you to filter streams using a single tag. Hopefully this will change, but until then, you are not able to filter streams using multiple tags. This filter option makes it possible to search for a stream that may have both an "English" and "Cozy" tag applied. An example would be a search for <code>english, chill, cozy</code> would return streams that have those three tags applied.</dd>
+
+        <dt class="col-sm-3 pt-2">Is this open-source?</dt>
+        <dd class="col-sm-9 pt-2">I am sharing the source a little at a time until I feel more confident in the code, but it is not fully open-source at this time. You can review the code published so far at <a href="https://github.com/crunchprank/twitch-gearbox">this GitHub repo</a>.</dd>
+
+        <dt class="col-sm-3 pt-2">Do you plan on adding more tools?</dt>
+        <dd class="col-sm-9 pt-2">Yes, but the tag and stream filter were the tools I wanted to share as soon as possible.</dd>
+
+        <dt class="col-sm-3 pt-2">Is there a changelog?</dt>
+        <dd class="col-sm-9 pt-2">Once I open-source this onto GitHub there will be, but until then the best option would be to check my <a href="https://mastodon.social/@crunchprank">Mastodon</a> for any updates or changes.</dd>
+
+        <dt class="col-sm-3 pt-2">What if I run into an issue or bug with the site?</dt>
+        <dd class="col-sm-9 pt-2">Please let me know of any issues you encounter so I can fix them. The best way to report an issue is by opening an issue at the <a href="https://github.com/crunchprank/twitch-gearbox/issues">GitHub repository</a>. You can also contact me using the above Mastodon link.</dd>
+
+        <dt class="col-sm-3 pt-2">Anything else we should know?</dt>
+        <dd class="col-sm-9 pt-2">The stream filter was heavily inspired by <a href="https://twitch-tools.rootonline.de/">CommanderRoot's tool</a>, which is a tool I've personally used to find many of my favorite streamers.</dd> 
+
+    </dl>
+</div>
+</section>
+
+
+
+        <footer class="bg-light text-center text-lg-start mt-4 rounded-top">
+            <div class="text-center p-3 small">
+                Made by <a href="https://crunchprank.net">crunchprank</a> | Not affiliated with Twitch | <a href="privacy.html">Privacy Policy</a> | Find me at
+                <a href="https://twitch.tv/crunchprank"><i class="px-1 fa-brands fa-twitch"></i></a>
+                <a href="https://mastodon.social/@crunchprank"><i class="pe-1 fa-brands fa-mastodon"></i></a>
+                <a href="https://instagram.com/crunchprank"><i class="pe-1 fa-brands fa-instagram"></i></a>
+                <a href="https://crunchprank.net/discord"><i class="pe-1 fa-brands fa-discord"></i></a>
+                <a href="https://patreon.com/crunchprank"><i class="fa-brands fa-patreon"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        function toggleDarkMode() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeSwitch').checked = true;
+        }
+        document.getElementById('darkModeSwitch').addEventListener('change', toggleDarkMode);
+    </script>
+</body>
+</html>
